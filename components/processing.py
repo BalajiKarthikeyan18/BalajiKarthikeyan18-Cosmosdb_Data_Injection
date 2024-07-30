@@ -3,6 +3,12 @@ import streamlit as st
 import nest_asyncio
 from gremlin_python.driver import client, serializer
 
+import json
+
+with open('config.json') as config_file:
+    config = json.load(config_file)
+
+
 def load(files):
     VERTICES,EDGES=[],[]
     counter=0
@@ -131,10 +137,12 @@ def gremlin_connect(VERTICES,EDGES):
     # Create the Database and Collection in the portal
     # This script will populate the data that we use in our demo
 
-    # ENDPOINT = 'YOUR_ENDPOINT.gremlin.cosmosdb.azure.com'
-    # PRIMARY_KEY = 'YOUR_PRIMARY_KEY'
-    # DATABASE = 'YOUR_DATABASE_NAME'
-    # COLLECTION = 'YOUR_COLLECTION_NAME' 
+
+    ENDPOINT = config['ENDPOINT']
+    PRIMARY_KEY = config['PRIMARY_KEY']
+    DATABASE = config['DATABASE']
+    COLLECTION = config['COLLECTION'] 
+
     
     def insert_vertices(gremlin_client):
         for vertex in VERTICES:
