@@ -135,12 +135,7 @@ def gremlin_connect(VERTICES,EDGES):
     # PRIMARY_KEY = 'YOUR_PRIMARY_KEY'
     # DATABASE = 'YOUR_DATABASE_NAME'
     # COLLECTION = 'YOUR_COLLECTION_NAME' 
-    # ENDPOINT = 'YOUR_ENDPOINT.gremlin.cosmosdb.azure.com'
-    # PRIMARY_KEY = 'YOUR_PRIMARY_KEY'
-    # DATABASE = 'YOUR_DATABASE_NAME'
-    # COLLECTION = 'YOUR_COLLECTION_NAME'
-
-
+    
     def insert_vertices(gremlin_client):
         for vertex in VERTICES:
             callback = gremlin_client.submitAsync(vertex)
