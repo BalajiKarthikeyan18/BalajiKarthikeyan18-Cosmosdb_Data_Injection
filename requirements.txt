@@ -1,0 +1,4 @@
+streamlit
+gremlinpython==3.7.2
+nest_asyncio==1.6.0
+async_timeout==4.0.3
