@@ -5,10 +5,15 @@ from gremlin_python.driver import client, serializer
 with open('config.json') as config_file:
     config = json.load(config_file)
 
-ENDPOINT = config["ENDPOINT"]
-PRIMARY_KEY = config["PRIMARY_KEY"]
-DATABASE = config["DATABASE"]
-COLLECTION = config["COLLECTION"]
+# ENDPOINT = config["ENDPOINT"]
+# PRIMARY_KEY = config["PRIMARY_KEY"]
+# DATABASE = config["DATABASE"]
+# COLLECTION = config["COLLECTION"]
+
+ENDPOINT = st.secrets["ENDPOINT"]
+PRIMARY_KEY = st.secrets["PRIMARY_KEY"]
+DATABASE = st.secrets["DATABASE"]
+COLLECTION = st.secrets["COLLECTION"]
 
 st.title("Querying")
 
