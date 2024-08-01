@@ -2,8 +2,8 @@ import streamlit as st
 import json
 from gremlin_python.driver import client, serializer
 
-with open('config.json') as config_file:
-    config = json.load(config_file)
+# with open('config.json') as config_file:
+#     config = json.load(config_file)
 
 # ENDPOINT = config["ENDPOINT"]
 # PRIMARY_KEY = config["PRIMARY_KEY"]
