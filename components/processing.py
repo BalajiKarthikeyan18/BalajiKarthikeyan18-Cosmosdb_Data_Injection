@@ -144,7 +144,17 @@ def gremlin_connect(VERTICES,EDGES):
     # Make sure to create your Cosmos DB Gremlin API endpoint at https://portal.azure.com
     # Create the Database and Collection in the portal
     # This script will populate the data that we use in our dem
-    
+
+    # ENDPOINT = config["ENDPOINT"]
+    # PRIMARY_KEY = config["PRIMARY_KEY"]
+    # DATABASE = config["DATABASE"]
+    # COLLECTION = config["COLLECTION"]
+
+    ENDPOINT = st.secrets["ENDPOINT"]
+    PRIMARY_KEY = st.secrets["PRIMARY_KEY"]
+    DATABASE = st.secrets["DATABASE"]
+    COLLECTION = st.secrets["COLLECTION"]
+
     def insert_vertices(gremlin_client):
         for vertex in VERTICES:
             callback = gremlin_client.submitAsync(vertex)
