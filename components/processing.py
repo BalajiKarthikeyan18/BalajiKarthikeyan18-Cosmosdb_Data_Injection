@@ -11,6 +11,7 @@ import json
 # PRIMARY_KEY = config['PRIMARY_KEY']
 # DATABASE = config['DATABASE']
 # COLLECTION = config['COLLECTION']
+
 def load(files):
     VERTICES,EDGES=[],[]
     counter=0
@@ -139,10 +140,12 @@ def gremlin_connect(VERTICES,EDGES):
     # Create the Database and Collection in the portal
     # This script will populate the data that we use in our demo
 
+
     ENDPOINT = 'YOUR_ENDPOINT.gremlin.cosmosdb.azure.com'
     PRIMARY_KEY = 'YOUR_PRIMARY_KEY'
     DATABASE = 'YOUR_DATABASE_NAME'
     COLLECTION = 'YOUR_COLLECTION_NAME'
+
     
     def insert_vertices(gremlin_client):
         for vertex in VERTICES:
@@ -181,17 +184,21 @@ def gremlin_connect(VERTICES,EDGES):
         
     handler()
 
+
 def cleanup_graph():
     st.write("first step") 
+
     gremlin_client = client.Client(
             'wss://' + ENDPOINT + ':443/', 'g',
             username="/dbs/" + DATABASE + "/colls/" + COLLECTION,
             password=PRIMARY_KEY,
             message_serializer=serializer.GraphSONSerializersV2d0()
+
         )
     st.write("started cleanup")   
     callback = gremlin_client.submitAsync("g.V().drop()")
     st.write("second step")
     st.write(callback.result())
+
     if callback.result() is not None:
         return "Cleaned up the graph!"
