@@ -7,6 +7,11 @@ import json
 # with open('config.json') as config_file:
 #     config = json.load(config_file)
 
+# ENDPOINT = config["ENDPOINT"]
+# PRIMARY_KEY = config["PRIMARY_KEY"]
+# DATABASE = config["DATABASE"]
+# COLLECTION = config["COLLECTION"]
+
 ENDPOINT = st.secrets["ENDPOINT"]
 PRIMARY_KEY = st.secrets["PRIMARY_KEY"]
 DATABASE = st.secrets["DATABASE"]
@@ -138,14 +143,7 @@ def gremlin_connect(VERTICES,EDGES):
     # CONFIG STUFF - YOU NEED TO EDIT THIS
     # Make sure to create your Cosmos DB Gremlin API endpoint at https://portal.azure.com
     # Create the Database and Collection in the portal
-    # This script will populate the data that we use in our demo
-
-
-    # ENDPOINT = 'YOUR_ENDPOINT.gremlin.cosmosdb.azure.com'
-    # PRIMARY_KEY = 'YOUR_PRIMARY_KEY'
-    # DATABASE = 'YOUR_DATABASE_NAME'
-    # COLLECTION = 'YOUR_COLLECTION_NAME'
-
+    # This script will populate the data that we use in our dem
     
     def insert_vertices(gremlin_client):
         for vertex in VERTICES:
