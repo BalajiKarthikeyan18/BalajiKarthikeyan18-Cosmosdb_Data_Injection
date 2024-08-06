@@ -30,8 +30,15 @@ query = st.text_area(label = "Enter Your query here")
 if query :
     callback = gremlin_client.submitAsync(query)
     res = callback.result()
+    l = []
 
-    json_string = json.dumps(res.next())
+    try :
+        for i in res :
+            l += i
+    except StopIteration :
+        pass
+    
+    json_string = json.dumps(l)
 
     st.json(json_string, expanded=True)
 
