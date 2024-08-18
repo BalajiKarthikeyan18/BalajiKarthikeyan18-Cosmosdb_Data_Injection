@@ -189,7 +189,6 @@ def gremlin_connect(VERTICES,EDGES):
         
     handler()
 
-
 def cleanup_graph():
     st.write("first step") 
 
