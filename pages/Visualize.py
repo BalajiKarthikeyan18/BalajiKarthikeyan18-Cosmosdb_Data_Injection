@@ -6,13 +6,18 @@ from gremlin_python.driver import serializer
 import networkx as nx
 import json
 
-with open('config.json') as config_file:
-    config = json.load(config_file)
+# with open('config.json') as config_file:
+#     config = json.load(config_file)
 
-ENDPOINT = config["ENDPOINT"]
-PRIMARY_KEY = config["PRIMARY_KEY"]
-DATABASE = config["DATABASE"]
-COLLECTION = config["COLLECTION"]
+# ENDPOINT = config["ENDPOINT"]
+# PRIMARY_KEY = config["PRIMARY_KEY"]
+# DATABASE = config["DATABASE"]
+# COLLECTION = config["COLLECTION"]
+
+ENDPOINT = st.secrets["ENDPOINT"]
+PRIMARY_KEY = st.secrets["PRIMARY_KEY"]
+DATABASE = st.secrets["DATABASE"]
+COLLECTION = st.secrets["COLLECTION"]
 
 # Function to connect to Azure Cosmos DB Gremlin API
 def connect_to_gremlin():
