@@ -23,7 +23,7 @@ on = st.toggle("See Details regarding cost")
 cost_for_storage = 0.25
 
 if on:
-    st.write("The cost of all database operations is normalized by Azure Cosmos DB and is expressed by Request Units (or RUs, for short). Request charge is the request units consumed by all your database operations.")
+    st.write("Request unit is a performance currency abstracting the system resources such as CPU, IOPS, and memory that are required to perform the database operations supported by Azure Cosmos DB.The cost of all database operations is normalized by Azure Cosmos DB and is expressed by Request Units (or RUs, for short). Request charge is the request units consumed by all your database operations.")
     st.write("Cost to  Store data =",cost_for_storage," $ per GB per month")
     st.write("Autoscale provisioned")
     st.image("./images/Autoscale.png", caption="Costing details")
